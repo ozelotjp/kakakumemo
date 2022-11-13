@@ -1,14 +1,13 @@
 services:
-
   app:
     build:
       context: .docker
       args:
-        UID: '${UID:-1000}'
-        GID: '${GID:-1000}'
+        UID: "${UID:-1000}"
+        GID: "${GID:-1000}"
     tty: true
     ports:
-      - '${APP_PORT:-8080}:8080'
+      - "${APP_PORT:-3000}:3000"
     volumes:
       - .:/workspace
     working_dir: /workspace
